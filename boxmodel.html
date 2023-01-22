@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS BOX MODEL</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            border: 10px double red;
+            font-size: 1.5rem;
+            margin: 1.5em;
+            padding: 1.5em;
+            outline: 5px solid purple;
+            outline-offset: -20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="container">
+        CSS Box Model
+    </h1>
+    <main class="container">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, nobis vitae, similique totam ipsum cumque facere nihil ea laborum consequuntur molestiae deserunt assumenda quasi impedit eum nostrum quae sint tenetur?
+    </main>
+</body>
+</html>

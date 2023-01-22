@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-flow: column nowrap;
+            place-content: center center;
+            padding: 20px;
+            font-size: 3rem;
+            text-align: center;
+
+        }
+
+       /*  p {
+            text-align: center;
+            font-size: inherit;
+            background-color: rgb(4, 4, 46);
+            color: white;
+        } */
+
+        #demo {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            align-items: center;
+            gap: 10rem;
+        }
+
+        button {
+            width: 200px;
+            height: 2rem;
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            border-radius: 15px;
+            border: none;
+            background-color: darkred;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        /* button:hover,
+        button:focus,
+        button:active {
+            border: 5px solid black;
+        } */
+
+    </style>
+</head>
+<body>
+    <!-- <h1>0</h1> -->
+    <p id="count-el">0</p>
+    <p id="sum-el"> </p>
+    <button id="button-el" onclick="increment()">Count</button>
+    <button id="save-el" onclick="save()">Save</button>
+    <!-- <button id="storage" onclick="saveMe()">Previous</button>
+    <p id="storage-el"></p> -->
+    <p id="demo"></p>
+    <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses from Beau Carnes</title>
+    <link rel="stylesheet" href="website.css">
+</head>
+<body id="top">
+    <section id="banner" data-video="images/banner">
+        <div class="inner">
+            <header>
+                <h1>Courses from Beau Carnes</h1>
+                <p>Beau has created many popular programming courses. You can now access his top course all in one place.</p>
+            </header>
+            <a href="#main" class="more">Learn More</a>
+        </div>
+    </section>
+
+    <!-- main -->
+    <!-- <div id="main">
+        <div class="inner">
+
+            <!-- Boxes -->
+            <!-- <div class="thumbnails">
+
+                <div class="box"></div>
+                <a href="https://youtu.be/PkZNo7MFNFo" class="image fit"><img src="http://img.youtube.com/vi/PkZNo7MFNFo">
+                    <div class="inner">
+                        <h1>Full JavaScript Course</h1>
+                        <p>Learn how to program in JavaScript</p>
+                    </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Footer -->
+    <!-- <footer id="footer">
+        <div class="inner">
+            <h2>Etiam veroeros lorem</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas aliquid consectetur volupta!</p>
+
+            <ul class="icons">
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+            <p class="copyright">&copy; Untitled. Design:</p>
+        </div>
+    </footer>
+</body>
+</html> -->
+    <script>
+        // Initialize the count as 0
+// Listen for clicks in the increment button
+// Increment the count variable when the button is clicked
+// change the count-el in the HTML to reflect the new count
+
+    let count = 0
+    let sum = ""
+    let countEl = document.getElementById("count-el")
+    let sumEl = document.getElementById("sum-el")
+    let storageEl = document.getElementById("storage-el")
+    function increment() {
+        count++
+        countEl.textContent = count
+    
+    }
+
+    function save() {
+        sumEl.textContent = "Sum: " + count
+        countEl.textContent = 0
+        count = 0
+    }
+
+    // function saveMe() {
+    //         storageEl.textContent = "Previous Count: " + count + sum
+    // }
+
+    
+
+    // let container = document.getElementById("container")
+    // container.innerHTML = '<button onclick="'
+
+    //  Count Down Timer
+
+    // Set the date we're counting down to
+    let countDownDate = new Date("Nov 21, 2022 11:19:05").getTime();
+
+    // Update the count down every 1 second
+
+    let x = setInterval( function() {
+
+        // Get today's date and time
+
+        let now = new Date().getTime();
+
+        // Find the distance between now and the countDownDate
+
+        let distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+
+        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+
+        let demoEl = document.getElementById("demo")
+        demoEl.textContent = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+        // If the count down is finished, write some text
+
+        if (distance <= 0) {
+            clearInterval(x);
+
+            demoEl.textContent = "You are welcome to this Gaming Challenge...."
+        }
+    }, 1000);
+
+    
+
+
+
+    </script>
+</body>
+</html>

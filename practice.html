@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Fruits</title>
+    <style>
+
+        body {
+            text-align: center;
+        }
+        #apple-shelf,
+        #orange-shelf {
+            width: 300px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border:  none;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+        }
+
+        #apple-shelf {
+            background-color: darkred;
+            margin-top: 250px;
+            margin-right: auto;
+            margin-left: auto;
+            
+        }
+
+        #orange-shelf {
+            background-color: orangered;
+            margin-right: auto;
+            margin-left: auto;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="apple-shelf"></div>
+    <div id="orange-shelf"></div>
+    <p id="welcome-el"></p>
+
+    <script>
+        let fruit = ["Apple", "Orange", "Apple", "Apple", "Orange"]
+        let appleShelf = document.getElementById("apple-shelf")
+        let orangeShelf = document.getElementById("orange-shelf")
+
+        function sortFruit() {
+            for (let i = 0;  i < fruit.length; i++) {
+                if (fruit[i] === "Apple") {
+                    appleShelf.textContent += "Apple "
+
+                } else if (fruit[i] === "Orange") {
+                    orangeShelf.textContent += "Orange "
+                }
+            }
+        }
+
+        sortFruit()
+
+        let welcomeEl = document.getElementById("welcome-el")
+
+            //  Parameters
+        function greetUser(greeting, name) {
+        welcomeEl.textContent = `${greeting} ${name}` 
+        }
+
+           // Auguments
+        greetUser("Hellow!", "Jerry",)
+
+
+        function add(num1, num2) {
+             return Number(num1) + Number(num2) 
+        }
+
+        console.log (add (3, 4) )
+        console.log (add (9, 102) )
+
+
+        function getFirst(arr) {
+            return arr[0]
+        }
+
+        console.log (getFirst(["Jerry", "School", "Books"]))
+        
+
+
+    </script>
+</body>
+</html>

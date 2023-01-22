@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        #demo-el {
+            padding: 1.5rem;
+            border: 2px solid rgb(184, 181, 181);
+        }
+
+        #button-sec {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+           
+        }
+
+        .btn {
+            font-size: 1.5rem;
+            margin: 0.5rem;
+            border-radius: 15px;
+            border: 1px solid rgb(233, 230, 230);
+            padding: 0.5rem 0.5rem;
+            font-weight: bold;
+
+        }
+
+        .btn:hover {
+            cursor: pointer;
+            background-color: rgb(5, 5, 37);
+            color: white;
+        }
+
+        #count-el {
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        #sum-el {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <ins id="count-el"></ins>
+    <div id="button-sec">
+        <button class="btn" id="add-btn" onclick="add()">Add</button>
+    <button class="btn" id="multi-btn" onclick="multiply()">Multiply</button>
+    <button class="btn" id="sub-btn" onclick="substract()">Substract</button>
+    <button class="btn" id="div-btn" onclick="divide()">Divide</button>
+    <button class="btn" id="rem-btn" onclick="remainder()">Remainder</button>
+    
+    </div>
+    <p id="sum-el">Sum: </p>
+
+    <button class="btn" id="save-btn" onclick="save()">Save</button>
+    <p id="previous-el"></p>
+    
+
+    <script>
+        let countEl = document.getElementById("count-el");
+        let num1 = Math.floor(Math.random() * 20);
+        let num2 = Math.floor(Math.random() * 10);
+        let sumEl = document.getElementById("sum-el")
+        countEl.textContent = `${num1}  ${num2}`;
+        let previousEl = document.getElementById("previous-el")
+        
+
+        function add() {
+            sumEl.textContent = "Sum: " + ( num1 + num2) 
+            
+        }
+        function multiply() {
+            sumEl.textContent = "Sum: " + ( num1 * num2) 
+            
+        }
+        function substract() {
+            sumEl.textContent = "Sum: " + ( num1 - num2) 
+            
+        }
+        function divide() {
+            sumEl.textContent = "Sum: " + ( num1 / num2) 
+            
+        }
+        function remainder() {
+            sumEl.textContent = "Sum: " + ( num1 % num2)  
+            
+        }
+
+    
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Down</title>
+    <style>
+        #demo-el {
+            text-align: center;
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+    <p id="demo-el"></p>
+
+    <script>
+        let countDownDate = new Date("Jan 10, 2023 13:00:00").getTime()
+        let x = setInterval( () => {
+            let now = new Date().getTime();
+            let distance = countDownDate - now;
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            let demoEl = document.getElementById("demo-el")
+            demoEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`
+            if (distance <= 0) {
+                clearInterval(x);
+                demoEl.textContent = "EXPIRED! You can now join the tournament NOW!"
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
+
+

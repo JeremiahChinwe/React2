@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Background Image</title>
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Tahoma;
+            background-color: #12475f;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        section {
+            width: 100vw;
+            height: 100vh;
+            background: rgb(5, 5, 61);
+        }
+
+        h1 {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            text-align: center;
+            width: 100%;
+            font-size: 3rem;
+            transform: translate(-50%, -50%);
+            letter-spacing: 35px;
+            animation: heading 3s forwards;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes heading {
+            0% {
+                top: -40%;
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.2;
+            }
+
+            100% {
+                top: 45%;
+                opacity: 1;
+            }
+        }
+
+        h3 {
+            position: absolute;
+            width: 100%;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 2rem;
+            opacity: 0.6;
+            letter-spacing: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            animation: content 3s forwards;
+        }
+
+        
+        @keyframes content {
+            from {
+                left: -1000px;
+            }
+
+            to {
+                left: 50%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+
+    <section>
+        <h1>Voyegers</h1>
+        <h3>Onboard The Humanitis</h3>
+    </section>
+
+
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", (e) => {
+            const sectionEl = document.querySelector("section");
+
+            function setBgImage() {
+                const images = [
+                    '../images/jack.png',
+                    '../images/gerard.png',
+                    '../images/norman.jpg.jpg',
+                    '../images/megan.png',
+                ];
+
+                const randomImage = Math.floor(Math.random() * 4);
+                //sectionEl.style.backgroundImage = `url(${images[randomImage]})`;
+                sectionEl.style.transition = ".7s";
+            };
+
+            setInterval(setBgImage, 2000)
+        })
+
+
+
+        // document.addEventListener('DOMContentLoaded', (e) => {
+        //     const sectionEl = document.querySelector('section');
+
+        //     function setBgImage() {
+        //         const images = [
+        //             '../images/jack.png',
+        //             '../images/gerard.png',
+        //             '../images/norman.jpg.jpg',
+        //             '../images/megan.png',
+        //         ];
+        //         //const randImage = images.sort((a, b) => 0.5 - Math.random());
+        //           const randIm = Math.floor(Math.random() * 4)
+        //         // console.log(randImage[0])
+        //         sectionEl.style.backgroundImage = `url(${images[randIm]})`
+        //         sectionEl.style.transition = `.7s`;
+        //     };
+
+        //     setInterval(setBgImage, 2000)
+        // })
+    </script>
+</body>
+</html>

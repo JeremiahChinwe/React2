@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <style>
+        body {
+            display: flex;
+            flex-flow: column nowrap;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        #container {
+            padding: 10px;
+            margin-top: 2rem;
+        }
+
+        #num-el {
+            font-size: 5rem;
+            margin-top: 0.5rem;
+        }
+
+        #sum-el {
+            font-size: 4rem;
+            margin-top: 2.5rem;
+        }
+
+        p {
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+            align-items: center;
+        }
+          #buttons {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+            gap: 2rem;
+            font-weight: bold;
+
+        }
+
+        #add-btn,
+        #sub-btn,
+        #mul-btn,
+        #div-btn,
+        #rem-el,
+        #refresh {
+            font-weight: bold;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        #add-btn:hover,
+        #sub-btn:hover,
+        #mul-btn:hover,
+        #div-btn:hover,
+        #rem-el:hover,
+        #refresh:hover {
+            background-color: rgb(12, 12, 51);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <p id="num-el"></p>
+        <p id="num-ele"></p>
+    <div id="buttons">
+        <button id="add-btn" onclick="add()">Add</button>
+        <button id="sub-btn" onclick="subtract()">Subtract</button>
+        <button id="mul-btn" onclick="multiply()">Multiply</button>
+        <button id="div-btn" onclick="divide()">Divide</button>
+        <button id="rem-el" onclick="remainder()">Remainder</button>
+        <button id="refresh">Refresh</button>
+    </div>
+    <p id="sum-el">Sum: </p>
+    </section>
+
+    <script>
+    let num1 = Math.floor(Math.random() * 20)
+    let num2 = Math.floor(Math.random() * 10);
+    let sum = 0;
+    let sumEl = document.getElementById("sum-el")
+    let numEl = document.getElementById("num-el")
+    numEl.textContent = `${num1}  ${num2}`
+    sumEl.textContent += sum
+
+    function add() {
+        sumEl.textContent = "Sum: " + (num1 + num2)
+    }
+
+    function subtract() {
+        sumEl.textContent = "Sum: " + (num1 - num2)
+    }
+
+    function multiply() {
+        sumEl.textContent = "Sum: " + (num1 * num2)
+    }
+
+    function divide() {
+        sumEl.textContent = "Sum: " + Math.ceil(num1 / num2)
+    }
+
+    function remainder() {
+        sumEl.textContent = "Sum: " + (num1 % num2)
+    }
+
+document.getElementById(refresh).addEventListener("click", function() {
+    document.getElementById(num-ele).textContent = sum
+})
+
+    </script>
+</body>
+</html>

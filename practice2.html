@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <style>
+        #jane-el {
+            width: 250px;
+            height: 2rem;
+            margin: 150px;
+            background-color: brown;
+            color: white;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100vh;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #button-group {
+            background-color: black;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 1.1em;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            
+        }
+
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        #container {
+            width: 100%;
+        }
+
+        h1 {
+            font-weight: 200;
+            letter-spacing: 2px;
+        }
+
+        .team-img {
+            width: 100px;
+            border-radius: 100%;
+            margin: 10px;
+        }
+
+        .bg-color {
+            background-color: red;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- <button id="jane-el">LOG JANE'S SCORE!</button> -->
+    <div id="container">
+        <!-- <h1>The Brooklyn Agency</h1> -->
+        <!-- <img class="team-img" src="../images/profile2-500x500.png">
+        <img class="team-img" src="../images/profile2-500x500.png">
+        <img class="team-img" src="../images/profile2-500x500.png"> -->
+    </div>
+    <!-- <div id="box"></div> -->
+    <div id="button-group">
+        <button value="red">Red</button>
+        <button value="blue">Blue</button>
+        <button value="green">Green</button>
+        <button value="yellow">Yellow</button>
+    </div>
+
+    <img src="" alt="" id="my-img">
+    
+     <script>
+
+            window.addEventListener("load", () => {
+            document.body.style.backgroundColor = "navy"
+            document.body.style.color = "white"
+        })
+
+            //  OR
+
+        /* window.addEventListener("load", () => {
+            document.body.setAttribute("class", "bg-color")
+        }) */
+
+              //  OR
+
+            /* window.addEventListenerI("load", () => {
+            document.body.classList.add("bg-color");
+        }) */
+
+        const box = document.getElementById("box")
+        window.addEventListener("load", () => {
+            box.style.backgroundColor = "yellow"
+        })
+
+
+
+
+        const buttonGroup  = document.getElementById("button-group")
+
+        buttonGroup.addEventListener("click", buttonGroupPressed = (e) => {
+            const isButton = e.target.nodeName === "BUTTON";
+            
+            document.body.style.backgroundColor = e.target.value;
+        });
+        
+        
+
+        
+        
+
+
+       /* const player = "Jerry"
+        const opponent = "David"
+        const game = "AmazingFighter"
+        let points = 0
+        let hasWon = false
+
+        points += 100
+        hasWon = true
+
+        if (hasWon) {
+            console.log(`${player} got ${points} points and won the ${game} game!`)
+        } else {
+            console.log(`The winner is ${opponent}! ${player} lost the game`)
+        }
+
+                    
+        let myCourses = ["Learn CSS Animations", "UI Design Fundamentals", "Intro to Clean Code"]
+
+        function array(arr) {
+            for (let i = 0;  i < arr.length;  i++) {
+                console.log(arr[i])
+            }
+        }
+
+        array(myCourses)
+
+              // LOCAL STORAGE
+
+        // localStorage.setItem("course", "the basics of html")
+        let courses = localStorage.getItem("course")
+        console.log(courses)
+
+          // addEventListener and Object in array
+
+        let data = [
+            {
+                player: "Jane",
+                score: 52
+            },
+
+            {
+                Player: "Mark",
+                score: 41
+            }
+        ]
+
+        let janeEl = document.getElementById("jane-el")
+        janeEl.addEventListener("click", function() {
+            console.log(data[0].score)
+        })
+
+
+        //  Generate Sentences
+
+    function genSentence(desc, arr) {
+        return `The 3 ${desc} are ${arr}.`
+    }
+    console.log(genSentence("largest countries", [`China, India, USA`]))
+
+
+
+    function generateSentence(desc, arr) {
+        return `The 2 ${desc} are ${arr}.`
+    }
+    console.log(generateSentence("best fruits", [`Apples, Bananas`]))
+
+
+        //  Render Images   */
+
+     /*    const imgs = [
+    "images/profile2-500x500.png",
+    "images/profile2-500x500.png",
+    "images/profile2-500x500.png"
+]
+
+const container = document.getElementById("container")
+
+function renderImages() {
+    let imgsDOM = ""
+    for (let i = 0; i < imgs.length; i++) {
+        imgsDOM += `<img alt="Employee in the company" class="team-img" src="${imgs[i]}">`
+    }
+    container.innerHTML = imgs
+}
+
+renderImages() */
+
+    </script>
+</body>
+</html>

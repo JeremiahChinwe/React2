@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family:  'Tahoma', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .flex-header {
+            display: flex;
+            align-items: center;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            padding: 1% 2%;
+        }
+
+        header {
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: #fff;
+            color: black;
+        }
+
+        .menu-div {
+            background-color: transparent;
+            width: 35px;
+            height: 35px;
+            border: none;
+            position: relative;
+            margin-right: 5%;
+            cursor: pointer;
+            
+        }
+
+        .menu-icon,
+        .menu-icon::before,
+        .menu-icon::after {
+            width: 35px;
+            height: 2.5px;
+            background-color: black;
+            position: absolute;
+            transition: all 0.1s;
+        }
+
+        .menu-icon::before,
+        .menu-icon::after {
+            content: " ";
+        }
+
+        .menu-icon::before {
+            transform: translate(0px, -10px);
+        }
+
+        .menu-icon::after {
+            transform: translate(0px, 10px);
+        }
+
+        .change .menu-icon {
+            background-color: transparent;
+        }
+
+        .change .menu-icon::before {
+            transform: translateX(0px) rotate(45deg);
+        }
+
+        .change .menu-icon::after {
+            transform: translateX(0px) rotate(-45deg);
+        }
+
+        .change .show-nav nav {
+            display: block;
+        }
+
+        nav {
+            display: none;
+            flex-basis: 50%;
+            background-color: #fff;
+            color: black;
+        }
+
+        #sec {
+            display: block;
+            margin: 50% auto;
+            text-align: center;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="flex-header">
+            <h1>My Portfolio</h1>
+            <div class="menu-div flex-header">
+                <div class="menu-icon"></div>
+            </div>
+        </div>
+        
+
+        
+        <nav class="flex-nav">
+            <ul class="list">
+                <li>
+                    <a href="">Home</a>
+                    <a href="">Blog</a>
+                    <a href="">Projects</a>
+                    <a href="">Contact</a>
+                    <a href="">About</a>
+                </li>
+            </ul>
+        </nav>
+       
+
+    </header>
+
+    
+    
+
+
+    <script>
+        let menuDiv = document.querySelector(".menu-div")
+        let menuIcon = document.querySelector(".menu-icon")
+        let flexNav = document.querySelector(".flex-nav")
+
+        menuIcon.addEventListener("click",  function() {
+            menuDiv.classList.toggle("change");
+            flexNav.classList.toggle("show-nav")
+        })
+    </script>
+</body>
+</html>
